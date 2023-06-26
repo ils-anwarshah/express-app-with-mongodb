@@ -3,8 +3,9 @@ const getUserData = require('../controller/getUserData')
 const postUserData = require('../controller/postUserData')
 const deleteUserData  = require('../controller/deleteUserData')
 const updateUserData = require('../controller/updateUserData')
+const { Validator } = require('../validator/userValidator')
 
-const postData = router.post('/postdata', postUserData)
+const postData = router.post('/postdata',Validator,postUserData)
 
 const getdata = router.post('/getdata', getUserData)
 
